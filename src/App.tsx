@@ -1,36 +1,15 @@
-import React, {useEffect, useState} from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {translateString} from "./services/translationService";
+import React, {useState} from 'react';
+import {TextEditor} from "./components/TextEditor";
+import {ReadingGui} from "./components/ReadingGui";
 
-function App() {
-
-  const [translation, setTranslation] = useState('')
-  const [toTranslate, setToTranslate] = useState('Ich Bin Ein Berliener!')
-
-  useEffect(  () => {
-    translateString(toTranslate).then(data=> setTranslation(data))
-  }, [toTranslate] )
-
-  console.log(translation)
+export const App = () => {
+  const [toTranslate, setToTranslate] = useState('Please enter your text to translate')
 
   return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo"/>
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+     <>
+     <TextEditor setToTranslate={setToTranslate} />
+     <ReadingGui text={toTranslate} />
+     </>
   );
 }
 

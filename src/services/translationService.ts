@@ -4,6 +4,7 @@ import axios from "axios";
 
 export const translateString = async (toTranslate: string): Promise<string> => {
     return await axios.get(getTranslationUrl('de', 'en', toTranslate)).then(resp => {
-        return resp.data[0][0][1];
+        console.log(resp.data[0][0])
+        return resp.data[0][0][0];
     });
 }
