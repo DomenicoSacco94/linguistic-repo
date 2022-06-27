@@ -7,7 +7,7 @@ interface WordButtonProps {
 }
 
 export const WordButton : React.FC<WordButtonProps> = (props) => {
-    const [translatedWord, setTranslatedWord] = useState('false')
+    const [translatedWord, setTranslatedWord] = useState('')
     const {word} = props
     const [showTranslation, setShowTranslation] = useState(false)
 
@@ -21,10 +21,6 @@ export const WordButton : React.FC<WordButtonProps> = (props) => {
     const onClick = async () => {
         setShowTranslation(!showTranslation)
     }
-
-    console.log(showTranslation)
-    console.log(translatedWord)
-
 
     return <Button onClick={onClick}>{showTranslation? translatedWord : word}</Button>
 
