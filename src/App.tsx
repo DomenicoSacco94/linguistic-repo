@@ -1,19 +1,18 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css'
 import {TextEditor} from "./components/TextEditor";
 import {ReadingGui} from "./components/ReadingGui";
 
-//TODO CHANGE BUTTON STYLE
 //TODO CREATE WIZARD FOR ENTERING THE TEXT AND THEN DISPLAYING IT
+//TODO IMPLEMENT PAGINATION FOR LONGER TEXTS
 //TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
 //TODO IMPLEMENT TESTS
-export const App = () => {
-  const [toTranslate, setToTranslate] = useState('')
 
+export const App = () => {
   return (
      <>
-     <TextEditor setToTranslate={setToTranslate} />
-     <ReadingGui text={toTranslate} />
+     <TextEditor/>
+     <ReadingGui/>
      </>
   );
 }

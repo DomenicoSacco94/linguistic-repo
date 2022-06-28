@@ -1,13 +1,11 @@
-import React, {ChangeEventHandler, Dispatch, SetStateAction} from 'react';
+import React, {ChangeEventHandler} from 'react';
 import TextArea from "antd/es/input/TextArea";
+import {useStore} from "../store/translationStore";
 
-interface TextEditorProps {
-    setToTranslate: Dispatch<SetStateAction<string>>,
-}
 
-export const TextEditor : React.FC<TextEditorProps> = (props: TextEditorProps) => {
+export const TextEditor : React.FC = () => {
 
-    const {setToTranslate} = props
+    const setToTranslate = useStore((state) => state.setTotranslate);
 
     const onChange : ChangeEventHandler<HTMLTextAreaElement> = (event) => {
         setToTranslate(event.target.value)

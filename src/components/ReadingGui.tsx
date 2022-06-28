@@ -1,13 +1,11 @@
 import React from "react";
 import {PeriodButton} from "./PeriodButton";
 import {getPeriodsFromText} from "../utils/stringUtils";
+import {useStore} from "../store/translationStore";
 
-interface ReadingGuiProps {
-    text: string
-}
+export const ReadingGui : React.FC = () => {
 
-export const ReadingGui : React.FC<ReadingGuiProps> = (props: ReadingGuiProps) => {
-    const {text} = props
+    const text = useStore((state) => state.toTranslate)
     const periods: string[] = getPeriodsFromText(text)
     return <>
         {periods.map((periods, index) => periods.length > 0 ?
