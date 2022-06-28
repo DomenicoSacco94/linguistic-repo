@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from "react";
-import {Button, Tooltip} from "antd";
+import {Tooltip} from "antd";
 import {translateString} from "../services/translationService";
 import {WordButton} from "./WordButton";
 import {splitFormat} from "../utils/stringUtils";
+import {RightOutlined} from "@ant-design/icons";
 
 interface SentenceButtonProps {
     sentence: string
@@ -26,7 +27,7 @@ export const SentenceButton : React.FC<SentenceButtonProps> = (props) => {
     }
 
     return <Tooltip placement="topLeft" trigger="click" title={translatedWord}>
-        <Button className="paragraphButton" onClick={onClick}>-</Button>
+        <RightOutlined className="paragraphButton" onClick={onClick}/>
         {words.map((word, index) => <WordButton key={index} word={word}/>)}
     </Tooltip>
 

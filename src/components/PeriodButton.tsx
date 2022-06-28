@@ -9,7 +9,5 @@ interface WordButtonProps {
 export const PeriodButton : React.FC<WordButtonProps> = (props) => {
     const {period} = props
     const sentences: string[] = getSentencesFromPeriod(period)
-    console.log(period)
-    console.log(sentences)
     return <div>{sentences.map(sentence=> <SentenceButton sentence={sentence}/>)}</div>
 }
