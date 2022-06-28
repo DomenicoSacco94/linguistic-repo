@@ -1,5 +1,6 @@
 import React from "react";
-import {WordButton} from "./WordButton";
+import {PeriodButton} from "./PeriodButton";
+import {getPeriodsFromText, getSentencesFromPeriod} from "../utils/stringManipulation";
 
 interface ReadingGuiProps {
     text: string
@@ -7,7 +8,7 @@ interface ReadingGuiProps {
 
 export const ReadingGui : React.FC<ReadingGuiProps> = (props: ReadingGuiProps) => {
     const {text} = props
-    const words: string[] = text.split(' ').map(word=> word + ' ')
-
-    return <>{words.map((word, index) => <WordButton key={index} word={word} />)}</>
+    const periods: string[] = getPeriodsFromText(text)
+    const sentences: string[] = getSentencesFromPeriod(periods)
+    return <>{sentences.map((sentences, index) => <PeriodButton key={index} period={sentences}/>)}</>
 }

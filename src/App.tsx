@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import './App.css'
 import {TextEditor} from "./components/TextEditor";
 import {ReadingGui} from "./components/ReadingGui";
 

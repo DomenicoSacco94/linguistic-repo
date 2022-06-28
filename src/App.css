@@ -1,0 +1,7 @@
+@import '~antd/dist/antd.css';
+
+
+.wordButton {
+    padding: 0;
+    margin: 2px;
+}

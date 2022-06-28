@@ -22,6 +22,6 @@ export const WordButton : React.FC<WordButtonProps> = (props) => {
         setShowTranslation(!showTranslation)
     }
 
-    return <Button onClick={onClick}>{showTranslation? translatedWord : word}</Button>
+    return <Button type="text" className="wordButton" onClick={onClick}>{showTranslation? translatedWord : word}</Button>
 
 }
