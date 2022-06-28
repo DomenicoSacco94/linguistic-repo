@@ -7,7 +7,7 @@ export const getSentencesFromPeriod = (period: string) : string[] => {
     const sentences = splitFormat(period,'.').filter(period=> period!=='')
     const mergedSentences: string[] = []
     for(let i=0; i<sentences.length; i++) {
-        if(sentences[i].length<100) {
+        if(sentences[i].length<100 && i<sentences.length-2) {
             mergedSentences.push(sentences[i]+sentences[i+1])
             i++
         }

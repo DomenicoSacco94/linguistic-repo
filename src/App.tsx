@@ -5,9 +5,9 @@ import {ReadingGui} from "./components/ReadingGui";
 import { Routes, Route} from 'react-router-dom';
 import {Navigation} from "./components/Navigation";
 
-//TODO IMPLEMENT PAGINATION FOR LONGER TEXTS
 //TODO IMPLEMENT LARGE IMPORT FROM WEBPAGE AS SINGLE TEXT
 //TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
+//TODO CUSTOMIZE NUMBER ITEMS PER PAGE THOUGH LIST
 //TODO IMPLEMENT TESTS
 
 export const App = () => {
