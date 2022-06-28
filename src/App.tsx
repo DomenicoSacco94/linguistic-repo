@@ -7,7 +7,7 @@ import {ReadingGui} from "./components/ReadingGui";
 //TODO CREATE WIZARDS
 //TODO IMPLEMENT TESTS
 export const App = () => {
-  const [toTranslate, setToTranslate] = useState('Please enter your text to translate.')
+  const [toTranslate, setToTranslate] = useState('')
 
   return (
      <>
