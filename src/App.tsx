@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css'
 import {TextEditor} from "./components/TextEditor";
-import {ReadingGui} from "./components/ReadingGui";
 import { Routes, Route} from 'react-router-dom';
 import {Navigation} from "./components/Navigation";
+import {ReadingGui} from "./components/readingGui/ReadingGui";
 
 //TODO IMPLEMENT LARGE IMPORT FROM WEBPAGE AS SINGLE TEXT
 //TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES

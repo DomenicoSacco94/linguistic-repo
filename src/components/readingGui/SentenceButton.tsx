@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
 import {Tooltip} from "antd";
-import {translateString} from "../services/translationService";
 import {WordButton} from "./WordButton";
-import {splitFormat} from "../utils/stringUtils";
 import {RightOutlined} from "@ant-design/icons";
+import {splitFormat} from "../../utils/stringUtils";
+import {translateString} from "../../services/translationService";
 
 interface SentenceButtonProps {
     sentence: string

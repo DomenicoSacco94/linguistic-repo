@@ -1,6 +1,6 @@
 import React from "react";
-import {useStore} from "../store/translationStore";
 import {Button} from "antd";
+import {useStore} from "../../store/translationStore";
 
 export const PaginatorButton : React.FC<{pageNumber: number}> = ({pageNumber}) => {
     const currentPage = useStore((state) => state.currentPage)

@@ -1,6 +1,6 @@
 import React from "react";
-import {getSentencesFromPeriod} from "../utils/stringUtils";
 import {SentenceButton} from "./SentenceButton";
+import {getSentencesFromPeriod} from "../../utils/stringUtils";
 
 interface WordButtonProps {
     period: string

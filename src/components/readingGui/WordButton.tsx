@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {Button} from "antd";
-import {translateString} from "../services/translationService";
+import {translateString} from "../../services/translationService";
+
 
 interface WordButtonProps {
     word: string

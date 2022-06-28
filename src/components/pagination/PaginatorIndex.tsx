@@ -1,6 +1,6 @@
 import React from "react";
 import {PaginatorButton} from "./PaginatorButton";
-import {ITEMS_PER_PAGE} from "../utils/constants";
+import {ITEMS_PER_PAGE} from "../../utils/constants";
 
 
 export const PaginatorIndex : React.FC<{totalItems: number}> = ({totalItems}) => {

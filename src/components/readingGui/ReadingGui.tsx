@@ -1,9 +1,10 @@
 import React from "react";
 import {PeriodButton} from "./PeriodButton";
-import {getPeriodsFromText} from "../utils/stringUtils";
-import {useStore} from "../store/translationStore";
-import {PaginatorIndex} from "./PaginatorIndex";
-import {DEFAULT_TEXT, ITEMS_PER_PAGE} from "../utils/constants";
+import {useStore} from "../../store/translationStore";
+import {getPeriodsFromText} from "../../utils/stringUtils";
+import {DEFAULT_TEXT, ITEMS_PER_PAGE} from "../../utils/constants";
+import {PaginatorIndex} from "../pagination/PaginatorIndex";
+
 
 export const ReadingGui : React.FC = () => {
     const text = useStore((state) => state.toTranslate)
