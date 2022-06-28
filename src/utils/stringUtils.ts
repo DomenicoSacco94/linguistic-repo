@@ -4,7 +4,17 @@ export const splitFormat = (string: string, separator: string | RegExp) : string
 }
 
 export const getSentencesFromPeriod = (period: string) : string[] => {
-    return splitFormat(period,'.').filter(period=> period!=='')
+    const sentences = splitFormat(period,'.').filter(period=> period!=='')
+    const mergedSentences: string[] = []
+    for(let i=0; i<sentences.length; i++) {
+        if(sentences[i].length<100) {
+            mergedSentences.push(sentences[i]+sentences[i+1])
+            i++
+        }
+        else mergedSentences.push(sentences[i])
+    }
+    return mergedSentences
+
 }
 
 export const getPeriodsFromText = (text: string) : string[] => {

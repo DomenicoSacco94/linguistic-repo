@@ -12,5 +12,7 @@ export const TextEditor : React.FC = () => {
         setToTranslate(event.target.value)
     }
 
-    return <TextArea rows={6} placeholder="Please enter your text to translate." onChange={onChange} value={toTranslate}/>
+    return <div className="inputTextAreaContainer">
+        <TextArea rows={6} className="inputTextArea" placeholder="Please enter your text to translate." onChange={onChange} value={toTranslate}/>
+        </div>
 }

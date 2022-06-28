@@ -12,6 +12,15 @@
     align-content: center;
 }
 
+.inputTextArea {
+    padding: 10px;
+}
+
+.inputTextAreaContainer {
+    margin: 20px;
+    align-content: center;
+}
+
 .wordButton {
     padding: 0;
     margin: 2px;
