@@ -3,16 +3,17 @@ import {PeriodButton} from "./PeriodButton";
 import {getPeriodsFromText} from "../utils/stringUtils";
 import {useStore} from "../store/translationStore";
 import {PaginatorIndex} from "./PaginatorIndex";
-import {ITEMS_PER_PAGE} from "../utils/constants";
+import {DEFAULT_TEXT, ITEMS_PER_PAGE} from "../utils/constants";
 
 export const ReadingGui : React.FC = () => {
     const text = useStore((state) => state.toTranslate)
     const periods: string[] = getPeriodsFromText(text)
     const currentPage = useStore((state) => state.currentPage)
     const startPage = currentPage*ITEMS_PER_PAGE
-    return <>
+    console.log(periods.length)
+    return <div className="readingGuiContainer">
         {periods.slice(startPage, startPage+ITEMS_PER_PAGE).map((periods, index) => periods.length > 0?
-            <PeriodButton key={index} period={periods}/> : index>0 && <br key={index}/>) }
-        <PaginatorIndex totalItems={periods.length}/>
-        </>
+            <PeriodButton key={index} period={periods}/> : index>0 && index<periods.length && <br key={index}/>)}
+        {periods.length > ITEMS_PER_PAGE && (text.length > 0 ? <PaginatorIndex totalItems={periods.length}/> : DEFAULT_TEXT)}
+        </div>
 }

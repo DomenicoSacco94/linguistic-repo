@@ -21,6 +21,11 @@
     align-content: center;
 }
 
+.readingGuiContainer {
+    margin: 20px;
+    align-content: center;
+}
+
 .wordButton {
     padding: 0;
     margin: 2px;

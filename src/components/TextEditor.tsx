@@ -1,6 +1,7 @@
 import React, {ChangeEventHandler} from 'react';
 import TextArea from "antd/es/input/TextArea";
 import {useStore} from "../store/translationStore";
+import {DEFAULT_TEXT} from "../utils/constants";
 
 
 export const TextEditor : React.FC = () => {
@@ -13,6 +14,6 @@ export const TextEditor : React.FC = () => {
     }
 
     return <div className="inputTextAreaContainer">
-        <TextArea rows={6} className="inputTextArea" placeholder="Please enter your text to translate." onChange={onChange} value={toTranslate}/>
+        <TextArea rows={6} className="inputTextArea" placeholder={DEFAULT_TEXT} onChange={onChange} value={toTranslate}/>
         </div>
 }
