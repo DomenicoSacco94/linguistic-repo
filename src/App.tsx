@@ -3,10 +3,11 @@ import './App.css'
 import {TextEditor} from "./components/TextEditor";
 import {ReadingGui} from "./components/ReadingGui";
 
-//TODO TRANSLATE WHOLE SENTENCE
-//TODO FIX BUTTONS AND THE TWO MODULES STYLING WITH FLEXBOX
+//TODO PRESERVE FORMATTING
+//TODO CREATE WIZARDS
+//TODO IMPLEMENT TESTS
 export const App = () => {
-  const [toTranslate, setToTranslate] = useState('Please enter your text to translate')
+  const [toTranslate, setToTranslate] = useState('Please enter your text to translate.')
 
   return (
      <>

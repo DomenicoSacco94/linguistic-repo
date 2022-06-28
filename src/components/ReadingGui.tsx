@@ -1,6 +1,6 @@
 import React from "react";
 import {PeriodButton} from "./PeriodButton";
-import {getPeriodsFromText, getSentencesFromPeriod} from "../utils/stringManipulation";
+import {getPeriodsFromText, getSentencesFromPeriod} from "../utils/stringUtils";
 
 interface ReadingGuiProps {
     text: string
