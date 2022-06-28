@@ -1,5 +1,16 @@
 @import '~antd/dist/antd.css';
 
+.navLink {
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.navBar {
+    border-bottom: solid 1px;
+    padding-bottom: 1rem;
+    text-align: center;
+    align-content: center;
+}
 
 .wordButton {
     padding: 0;
