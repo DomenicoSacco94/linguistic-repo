@@ -14,7 +14,6 @@ const props: UploadProps = {
     },
     onChange(info: UploadChangeParam) {
         if (info.file.status !== 'uploading') {
-            console.log(info.file, info.fileList);
         }
         if (info.file.status === 'done') {
             message.success(`${info.file.name} file uploaded successfully`);
@@ -27,8 +26,10 @@ const props: UploadProps = {
 export const ImportFile : React.FC = () => {
 
     const setCurrentPage = useStore((state) => state.setCurrentPage)
+    const setToTranslate = useStore((state) => state.setTotranslate);
 
     setCurrentPage(0)
+    setToTranslate(null)
 
     return <div className="inputTextAreaContainer">
         <Upload {...props}>
