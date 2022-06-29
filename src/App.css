@@ -12,6 +12,10 @@
     align-content: center;
 }
 
+.paragraphDiv {
+    margin: 15px 0 15px 0;
+}
+
 .inputTextArea {
     padding: 10px;
 }

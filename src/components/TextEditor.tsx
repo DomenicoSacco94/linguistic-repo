@@ -9,6 +9,10 @@ export const TextEditor : React.FC = () => {
     const setToTranslate = useStore((state) => state.setTotranslate);
     const toTranslate = useStore((state) => state.toTranslate);
 
+    if(localStorage.getItem('text-to-translate')) {
+        localStorage.setItem('text-to-translate', '')
+    }
+
     const onChange : ChangeEventHandler<HTMLTextAreaElement> = (event) => {
         setToTranslate(event.target.value)
     }

@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {Tooltip} from "antd";
 import {WordButton} from "./WordButton";
 import {RightOutlined} from "@ant-design/icons";
 import {splitFormat} from "../../utils/stringUtils";
@@ -17,7 +16,9 @@ export const SentenceButton : React.FC<SentenceButtonProps> = (props) => {
 
     useEffect( () => {
         if (showTranslation) {
-            translateString(sentence).then(data=> setTranslatedWord(data))
+            translateString(sentence).then(data=> {
+                setTranslatedWord(data)
+            })
         }
 
     }, [showTranslation, sentence])
@@ -26,9 +27,8 @@ export const SentenceButton : React.FC<SentenceButtonProps> = (props) => {
         setShowTranslation(!showTranslation)
     }
 
-    return <Tooltip placement="topLeft" trigger="click" title={translatedWord}>
+    return <>
         <RightOutlined className="paragraphButton" onClick={onClick}/>
-        {words.map((word, index) => <WordButton key={index} word={word}/>)}
-    </Tooltip>
-
+    {showTranslation? translatedWord : words.map((word, index) => <WordButton key={index} word={word}/>)}
+        </>
 }

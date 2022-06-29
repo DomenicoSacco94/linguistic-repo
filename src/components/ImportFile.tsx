@@ -3,6 +3,7 @@ import {Button, message, Upload, UploadProps} from "antd";
 import {UploadOutlined} from "@ant-design/icons";
 import {UploadChangeParam} from 'antd/lib/upload';
 import {beforeUpload} from "../utils/fileUtils";
+import {useStore} from "../store/translationStore";
 
 const props: UploadProps = {
     name: 'file',
@@ -24,6 +25,10 @@ const props: UploadProps = {
 };
 
 export const ImportFile : React.FC = () => {
+
+    const setCurrentPage = useStore((state) => state.setCurrentPage)
+
+    setCurrentPage(0)
 
     return <div className="inputTextAreaContainer">
         <Upload {...props}>

@@ -1,6 +1,6 @@
 
 export const splitFormat = (string: string, separator: string | RegExp) : string[] => {
-    return string.length? string.split(separator).map(string=> string+separator).filter(string=>string!==separator) : ['']
+    return string.length? string.split(separator).filter(string=>string!==separator) : ['']
 }
 
 export const getSentencesFromPeriod = (period: string) : string[] => {
@@ -13,10 +13,10 @@ export const getSentencesFromPeriod = (period: string) : string[] => {
         }
         else mergedSentences.push(sentences[i])
     }
-    return mergedSentences
+    return mergedSentences.map(sentence=> sentence.replace(/(\r\n|\n|\r|;)/gm, ""))
 
 }
 
 export const getPeriodsFromText = (text: string) : string[] => {
-    return text.split('\n')
+    return text.split('\n\n')
 }

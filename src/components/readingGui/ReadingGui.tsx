@@ -8,9 +8,9 @@ import {PaginatorIndex} from "../pagination/PaginatorIndex";
 
 export const ReadingGui : React.FC = () => {
     let text = useStore((state) => {
-        if(state.toTranslate==='') {
+        if(state.toTranslate.length) {
             const storage = localStorage.getItem('text-to-translate')
-            if(storage) {
+            if(storage?.length) {
                 return storage
             }
         }
