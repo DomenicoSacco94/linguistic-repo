@@ -11,8 +11,8 @@ export const ReadingGui : React.FC = () => {
         if(state.toTranslate==='') {
             const storage = localStorage.getItem('text-to-translate')
             if(storage) {
-                console.log("getting text")
-                return storage}
+                return storage
+            }
         }
         return state.toTranslate
     })

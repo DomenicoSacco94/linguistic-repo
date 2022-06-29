@@ -6,7 +6,7 @@ import {beforeUpload} from "../utils/fileUtils";
 
 const props: UploadProps = {
     name: 'file',
-    accept: '.pdf, .txt',
+    accept: '.txt',
     beforeUpload,
     headers: {
         authorization: 'authorization-text',
