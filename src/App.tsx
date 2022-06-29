@@ -6,7 +6,6 @@ import {Navigation} from "./components/Navigation";
 import {ReadingGui} from "./components/readingGui/ReadingGui";
 import {ImportFile} from "./components/ImportFile";
 
-//FIX STRINGS IN IMPORT FORM TXT
 //TODO CUSTOMIZE NUMBER ITEMS PER PAGE THOUGH LIST
 //TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
 //TODO IMPLEMENT TESTS
