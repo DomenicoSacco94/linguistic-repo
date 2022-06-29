@@ -6,9 +6,9 @@ import {Navigation} from "./components/Navigation";
 import {ReadingGui} from "./components/readingGui/ReadingGui";
 import {ImportFile} from "./components/ImportFile";
 
-//TODO IMPLEMENT LARGE IMPORT FROM WEBPAGE AS SINGLE TEXT
-//TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
+//FIX STRINGS IN IMPORT FORM TXT
 //TODO CUSTOMIZE NUMBER ITEMS PER PAGE THOUGH LIST
+//TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
 //TODO IMPLEMENT TESTS
 
 export const App = () => {
