@@ -4,6 +4,7 @@ import {TextEditor} from "./components/TextEditor";
 import { Routes, Route} from 'react-router-dom';
 import {Navigation} from "./components/Navigation";
 import {ReadingGui} from "./components/readingGui/ReadingGui";
+import {ImportFile} from "./components/ImportFile";
 
 //TODO IMPLEMENT LARGE IMPORT FROM WEBPAGE AS SINGLE TEXT
 //TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
@@ -16,6 +17,7 @@ export const App = () => {
 
       <Routes>
           <Route path="" element={<TextEditor/>} />
+          <Route path="import" element={<ImportFile/>} />
           <Route path="editor" element={<TextEditor/>} />
           <Route path="read" element={<ReadingGui/>} />
       </Routes>
