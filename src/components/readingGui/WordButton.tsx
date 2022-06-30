@@ -11,7 +11,7 @@ export const WordButton: React.FC<{
     const {translatedSentence, showTranslation, setShowTranslation} = useTranslation(word)
 
     const onClick = async () => {
-        disabled && setShowTranslation(!showTranslation)
+        !disabled && setShowTranslation(!showTranslation)
     }
 
     return <Button type="text" className="wordButton"
