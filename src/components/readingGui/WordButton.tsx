@@ -13,6 +13,6 @@ export const WordButton: React.FC<{
     }
 
     return <Button type="text" className="wordButton"
-                   onClick={onClick}>{showTranslation ? translatedSentence : word + " "}</Button>
+                   onClick={onClick}>{showTranslation ? translatedSentence.toString().replaceAll(","," ") : word + " "}</Button>
 
 }
