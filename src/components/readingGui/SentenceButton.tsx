@@ -2,7 +2,6 @@ import React from "react";
 import {WordButton} from "./WordButton";
 import {RightOutlined} from "@ant-design/icons";
 import {splitFormat} from "../../utils/stringUtils";
-import {Button} from "antd";
 import {useTranslation} from "../hooks/translationHook";
 
 export const SentenceButton: React.FC<{
@@ -15,13 +14,10 @@ export const SentenceButton: React.FC<{
     const onClick = async () => {
         setShowTranslation(!showTranslation)
     }
-    //TODO create fragmented component for words
-    //TODO set different background for translated words and sentences
-    return <>
-        <RightOutlined className="paragraphButton" onClick={onClick}/>
 
-        {showTranslation ? translatedSentence.map((word: string, index) => <Button type="text" className="wordButton"
-                                                                                   key={index}>{word}</Button>) : words.map((word, index) =>
-            <WordButton key={index} word={word}/>)}
-    </>
+    const displayedSentence = showTranslation ? translatedSentence : words
+    return <span style={{color: showTranslation? 'red' : 'black' }}>
+        <RightOutlined className="paragraphButton" onClick={onClick}/>
+        {displayedSentence.map((word: string, index) => <WordButton style={{color: showTranslation? 'red' : 'black'}} disabled={showTranslation} key={index} word={word}/>)}
+    </span>
 }
