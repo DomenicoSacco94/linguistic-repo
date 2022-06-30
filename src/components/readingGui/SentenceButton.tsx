@@ -5,13 +5,10 @@ import {splitFormat} from "../../utils/stringUtils";
 import {translateString} from "../../services/translationService";
 import {Button} from "antd";
 
-interface SentenceButtonProps {
+export const SentenceButton : React.FC<{
     sentence: string
-}
-
-export const SentenceButton : React.FC<SentenceButtonProps> = (props) => {
+}> = ({sentence}) => {
     const [translatedSentence, setTranslatedSentence] = useState<string[]>([])
-    const {sentence} = props
     const [showTranslation, setShowTranslation] = useState(false)
     const words: string[] = splitFormat(sentence,' ')
 

@@ -2,14 +2,10 @@ import React, {useEffect, useState} from "react";
 import {Button} from "antd";
 import {translateString} from "../../services/translationService";
 
-
-interface WordButtonProps {
+export const WordButton : React.FC<{
     word: string
-}
-
-export const WordButton : React.FC<WordButtonProps> = (props) => {
+}> = ({word}) => {
     const [translatedWord, setTranslatedWord] = useState('')
-    const {word} = props
     const [showTranslation, setShowTranslation] = useState(false)
 
     useEffect( () => {
