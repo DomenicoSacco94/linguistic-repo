@@ -2,7 +2,7 @@ import React from "react";
 import {Button} from "antd";
 import {useStore} from "../../store/translationStore";
 
-export const PaginatorButton : React.FC<{pageNumber: number}> = ({pageNumber}) => {
+export const PaginatorButton: React.FC<{ pageNumber: number }> = ({pageNumber}) => {
     const currentPage = useStore((state) => state.currentPage)
     const setCurrentPage = useStore((state) => state.setCurrentPage)
 
@@ -11,5 +11,5 @@ export const PaginatorButton : React.FC<{pageNumber: number}> = ({pageNumber}) =
     }
 
     return <Button onClick={onClick}
-     style={{backgroundColor: pageNumber=== currentPage? 'yellow' : 'white' }}>{pageNumber}</Button>
+                   style={{backgroundColor: pageNumber === currentPage ? 'yellow' : 'white'}}>{pageNumber}</Button>
 }

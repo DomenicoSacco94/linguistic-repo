@@ -5,17 +5,17 @@ import {splitFormat} from "../../utils/stringUtils";
 import {translateString} from "../../services/translationService";
 import {Button} from "antd";
 
-export const SentenceButton : React.FC<{
+export const SentenceButton: React.FC<{
     sentence: string
 }> = ({sentence}) => {
     const [translatedSentence, setTranslatedSentence] = useState<string[]>([])
     const [showTranslation, setShowTranslation] = useState(false)
-    const words: string[] = splitFormat(sentence,' ')
+    const words: string[] = splitFormat(sentence, ' ')
 
-    useEffect( () => {
+    useEffect(() => {
         if (showTranslation) {
-            translateString(sentence).then(data=> {
-                setTranslatedSentence(splitFormat(data,' '))
+            translateString(sentence).then(data => {
+                setTranslatedSentence(splitFormat(data, ' '))
             })
         }
 
@@ -29,6 +29,8 @@ export const SentenceButton : React.FC<{
     return <>
         <RightOutlined className="paragraphButton" onClick={onClick}/>
 
-    {showTranslation? translatedSentence.map((word: string,index)=> <Button type="text" className="wordButton" key={index}>{word}</Button>) : words.map((word, index) => <WordButton key={index} word={word}/>)}
-        </>
+        {showTranslation ? translatedSentence.map((word: string, index) => <Button type="text" className="wordButton"
+                                                                                   key={index}>{word}</Button>) : words.map((word, index) =>
+            <WordButton key={index} word={word}/>)}
+    </>
 }

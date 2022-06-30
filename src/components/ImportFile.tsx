@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, message, Upload, UploadProps} from "antd";
 import {UploadOutlined} from "@ant-design/icons";
 import {UploadChangeParam} from 'antd/lib/upload';
@@ -23,17 +23,18 @@ const props: UploadProps = {
     },
 };
 
-export const ImportFile : React.FC = () => {
+export const ImportFile: React.FC = () => {
 
-    const setCurrentPage = useStore((state) => state.setCurrentPage)
     const setToTranslate = useStore((state) => state.setTotranslate);
 
-    setCurrentPage(0)
-    setToTranslate(null)
+
+    useEffect(() => setToTranslate(null),
+        [setToTranslate])
+
 
     return <div className="inputTextAreaContainer">
         <Upload {...props}>
-            <Button icon={<UploadOutlined />}>Click to Upload</Button>
+            <Button icon={<UploadOutlined/>}>Click to Upload</Button>
         </Upload>
     </div>
 }
