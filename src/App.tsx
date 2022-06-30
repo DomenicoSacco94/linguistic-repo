@@ -6,8 +6,7 @@ import {Navigation} from "./components/Navigation";
 import {ReadingGui} from "./components/readingGui/ReadingGui";
 import {ImportFile} from "./components/ImportFile";
 
-//TODO USE CUSTOM HOOK
-//TODO COMPARTIMENTALISE COMPONENTS
+//TODO COMPARTIMENTALIZE COMPONENTS
 //TODO CUSTOMIZE NUMBER ITEMS PER PAGE THOUGH LIST
 //TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
 //TODO IMPLEMENT TESTS

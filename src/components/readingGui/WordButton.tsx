@@ -1,25 +1,18 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {Button} from "antd";
-import {translateString} from "../../services/translationService";
+import {useTranslation} from "../hooks/translationHook";
 
 export const WordButton: React.FC<{
     word: string
 }> = ({word}) => {
-    const [translatedWord, setTranslatedWord] = useState('')
-    const [showTranslation, setShowTranslation] = useState(false)
 
-    useEffect(() => {
-        if (showTranslation) {
-            translateString(word).then(data => setTranslatedWord(data))
-        }
-
-    }, [showTranslation, word])
+    const {translatedSentence, showTranslation, setShowTranslation} = useTranslation(word)
 
     const onClick = async () => {
         setShowTranslation(!showTranslation)
     }
 
     return <Button type="text" className="wordButton"
-                   onClick={onClick}>{showTranslation ? translatedWord : word + " "}</Button>
+                   onClick={onClick}>{showTranslation ? translatedSentence : word + " "}</Button>
 
 }

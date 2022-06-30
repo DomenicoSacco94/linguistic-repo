@@ -1,25 +1,16 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import {WordButton} from "./WordButton";
 import {RightOutlined} from "@ant-design/icons";
 import {splitFormat} from "../../utils/stringUtils";
-import {translateString} from "../../services/translationService";
 import {Button} from "antd";
+import {useTranslation} from "../hooks/translationHook";
 
 export const SentenceButton: React.FC<{
     sentence: string
 }> = ({sentence}) => {
-    const [translatedSentence, setTranslatedSentence] = useState<string[]>([])
-    const [showTranslation, setShowTranslation] = useState(false)
     const words: string[] = splitFormat(sentence, ' ')
 
-    useEffect(() => {
-        if (showTranslation) {
-            translateString(sentence).then(data => {
-                setTranslatedSentence(splitFormat(data, ' '))
-            })
-        }
-
-    }, [showTranslation, sentence])
+    const {translatedSentence, showTranslation, setShowTranslation} = useTranslation(sentence)
 
     const onClick = async () => {
         setShowTranslation(!showTranslation)
