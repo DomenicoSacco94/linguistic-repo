@@ -1,7 +1,7 @@
 import React, {ChangeEventHandler} from 'react';
 import TextArea from "antd/es/input/TextArea";
 import {useStore} from "../store/translationStore";
-import {DEFAULT_TEXT} from "../utils/constants";
+import {DEFAULT_TEXT, STORAGE_ITEM_KEY} from "../utils/constants";
 
 
 export const TextEditor: React.FC = () => {
@@ -10,8 +10,8 @@ export const TextEditor: React.FC = () => {
     const toTranslate = useStore((state) => state.toTranslate);
 
     const onChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
-        if (localStorage.getItem('text-to-translate')) {
-            localStorage.setItem('text-to-translate', '')
+        if (localStorage.getItem(STORAGE_ITEM_KEY )) {
+            localStorage.setItem(STORAGE_ITEM_KEY , '')
         }
         setToTranslate(event.target.value)
     }
