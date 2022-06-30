@@ -13,7 +13,7 @@ export const getSentencesFromPeriod = (period: string) : string[] => {
         }
         else mergedSentences.push(sentences[i])
     }
-    return mergedSentences.map(sentence=> sentence.replace(/(\r\n|\n|\r|;)/gm, ""))
+    return mergedSentences.map(sentence=> sentence.replace(/(\r\n|\n|\r)/gm, ""))
 
 }
 
