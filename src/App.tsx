@@ -6,10 +6,9 @@ import {Navigation} from "./components/Navigation";
 import {ReadingGui} from "./components/readingGui/ReadingGui";
 import {ImportFile} from "./components/ImportFile";
 
-//TODO IMPLEMENT TESTS
-//TODO CHECK RESPONSIVE LAYOUT
 //TODO DOCKERFILE
 //TODO DEPLOY
+//TODO CHECK RESPONSIVE LAYOUT
 //TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
 //TODO CUSTOMIZE NUMBER ITEMS PER PAGE THOUGH LIST
 
