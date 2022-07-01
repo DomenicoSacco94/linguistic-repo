@@ -13,9 +13,9 @@ export const WordButton: React.FC<{
     const onClick = async () => {
         !disabled && setShowTranslation(!showTranslation)
     }
-
+    const styleToUse = disabled ? style : {color: showTranslation? 'red' : 'black' }
     return <Button type="text" className="wordButton"
-                   style={{backgroundColor: !disabled && showTranslation? 'yellow' : 'white', ...style}}
+                   style={styleToUse}
                    onClick={onClick}>{showTranslation ? translatedSentence.toString().replaceAll(","," ") : word + " "}</Button>
 
 }
