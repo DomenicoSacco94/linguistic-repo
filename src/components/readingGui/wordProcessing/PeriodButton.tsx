@@ -1,6 +1,6 @@
 import React from "react";
 import {SentenceButton} from "./SentenceButton";
-import {getSentencesFromPeriod} from "../../utils/stringUtils";
+import {getSentencesFromPeriod} from "../../../utils/stringUtils";
 
 export const PeriodButton: React.FC<{
     period: string

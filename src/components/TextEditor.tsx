@@ -10,8 +10,8 @@ export const TextEditor: React.FC = () => {
     const toTranslate = useStore((state) => state.toTranslate);
 
     const onChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
-        if (localStorage.getItem(STORAGE_ITEM_KEY )) {
-            localStorage.setItem(STORAGE_ITEM_KEY , '')
+        if (localStorage.getItem(STORAGE_ITEM_KEY)) {
+            localStorage.setItem(STORAGE_ITEM_KEY, '')
         }
         setToTranslate(event.target.value)
     }

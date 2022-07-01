@@ -1,6 +1,6 @@
 import React from "react";
 import {Button} from "antd";
-import {useTranslation} from "../hooks/translationHook";
+import {useTranslation} from "../../hooks/translationHook";
 
 export const WordButton: React.FC<{
     word: string,
@@ -13,9 +13,9 @@ export const WordButton: React.FC<{
     const onClick = async () => {
         !disabled && setShowTranslation(!showTranslation)
     }
-    const styleToUse = disabled ? style : {color: showTranslation? 'red' : 'black' }
+    const styleToUse = disabled ? style : {color: showTranslation ? 'red' : 'black'}
     return <Button type="text" className="wordButton"
                    style={styleToUse}
-                   onClick={onClick}>{showTranslation ? translatedSentence.toString().replaceAll(","," ") : word + " "}</Button>
+                   onClick={onClick}>{showTranslation ? translatedSentence.toString().replaceAll(",", " ") : word + " "}</Button>
 
 }

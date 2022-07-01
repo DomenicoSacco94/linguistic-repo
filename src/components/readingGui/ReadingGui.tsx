@@ -18,7 +18,7 @@ export const ReadingGui: React.FC = () => {
     }, [textToRetrieve, setCurrentPage])
 
     return <div className="readingGuiContainer">
-        <ReadingDisplay periods={periods} />
-        <Paginator periodsLength={periods.length} textLength={textToRetrieve.length} />
+        <ReadingDisplay periods={periods}/>
+        <Paginator periodsLength={periods.length} textLength={textToRetrieve.length}/>
     </div>
 }
