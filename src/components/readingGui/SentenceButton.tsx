@@ -16,8 +16,8 @@ export const SentenceButton: React.FC<{
     }
 
     const displayedSentence = showTranslation ? translatedSentence : words
-    return <span style={{color: showTranslation? 'red' : 'black' }}>
-        <RightOutlined className="paragraphButton" onClick={onClick}/>
+    return <>
+        <RightOutlined style={{color: showTranslation? 'red' : 'black' }} className="paragraphButton" onClick={onClick}/>
         {displayedSentence.map((word: string, index) => <WordButton style={{color: showTranslation? 'red' : 'black'}} disabled={showTranslation} key={index} word={word}/>)}
-    </span>
+    </>
 }
