@@ -6,9 +6,12 @@ import {Navigation} from "./components/Navigation";
 import {ReadingGui} from "./components/readingGui/ReadingGui";
 import {ImportFile} from "./components/ImportFile";
 
-//TODO CUSTOMIZE NUMBER ITEMS PER PAGE THOUGH LIST
-//TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
 //TODO IMPLEMENT TESTS
+//TODO CHECK RESPONSIVE LAYOUT
+//TODO DOCKERFILE
+//TODO DEPLOY
+//TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
+//TODO CUSTOMIZE NUMBER ITEMS PER PAGE THOUGH LIST
 
 export const App = () => {
     return <>
