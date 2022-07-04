@@ -6,8 +6,8 @@ import {Navigation} from "./components/Navigation";
 import {ReadingGui} from "./components/readingGui/ReadingGui";
 import {ImportFile} from "./components/ImportFile";
 
-//TODO REMOVE PARAGRAPH LOGIC
-//TODO FIX STRINGS FOR PORTABLE VERSION
+//TODO DEPLOY
+//TODO CHECK RESPONSIVE LAYOUT
 //TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
 //TODO CUSTOMIZE NUMBER ITEMS PER PAGE THOUGH LIST
 
