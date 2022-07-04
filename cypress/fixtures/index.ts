@@ -12,7 +12,7 @@
 // the project's config changing)
 
 // @ts-ignore
-module.exports = on => {
-    // `on` is used to hook into various events Cypress emits
-    // `config` is the resolved Cypress confi
+module.exports = (on) => {
+  // `on` is used to hook into various events Cypress emits
+  // `config` is the resolved Cypress confi
 };
