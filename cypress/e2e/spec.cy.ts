@@ -1,6 +1,8 @@
+const host = "http://localhost:3000/linguistic-repo"
+
 describe('Links are rendering', () => {
     it('passes', () => {
-        cy.visit('http://localhost:3000/')
+        cy.visit(host)
         cy.contains('Import TXT')
         cy.contains('Input')
         cy.contains('Read')
@@ -10,7 +12,7 @@ describe('Links are rendering', () => {
 describe('Input is working', () => {
     it('passes', () => {
         interceptTranslationRequest('sentence', 'sentence:EN', 'wordTranslation')
-        cy.visit('http://localhost:3000/')
+        cy.visit(host)
         cy.get('textarea').type('German sentence 1. German sentence 2')
         cy.get('.navLink').contains('Read').click()
         cy.get('div').contains('German sentence 1')
@@ -36,7 +38,7 @@ describe('Input is working', () => {
 describe('File upload is working', () => {
     it('passes', () => {
         interceptTranslationRequest('Die Deutsche Demokratische Republik', 'Translation of the sentence','sentenceTranslation')
-        cy.visit('http://localhost:3000/')
+        cy.visit(host)
         cy.get('.navLink').contains('Import TXT').click()
         cy.fixture('test.txt').then(fileContent => {
             cy.get('input[type="file"]').attachFile({
@@ -56,7 +58,7 @@ describe('File upload is working', () => {
 describe('Uploading a file after the input works correctly', () => {
     it('passes', () => {
         interceptTranslationRequest('Die Deutsche Demokratische Republik', 'Translation of the sentence','sentenceTranslation')
-        cy.visit('http://localhost:3000/')
+        cy.visit(host)
         cy.get('textarea').type('German sentence 1. German sentence 2')
         cy.get('.navLink').contains('Read').click()
         cy.get('div').contains('German sentence 1')
@@ -83,7 +85,7 @@ describe('Uploading a file after the input works correctly', () => {
 describe('Input text after uploading a file works correctly', () => {
     it('passes', () => {
         interceptTranslationRequest('Die Deutsche Demokratische Republik', 'Translation of the sentence','sentenceTranslation')
-        cy.visit('http://localhost:3000/')
+        cy.visit(host)
 
         cy.get('.navLink').contains('Import TXT').click()
         cy.fixture('test.txt').then(fileContent => {
