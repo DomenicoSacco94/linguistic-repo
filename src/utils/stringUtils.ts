@@ -11,10 +11,10 @@ export const getSentencesFromPeriod = (period: string): string[] => {
             i++
         } else mergedSentences.push(sentences[i])
     }
-    return mergedSentences.map(sentence => sentence.replace(/(\r\n|\n|\r)/gm, ""))
+    return mergedSentences.filter(sentence=> sentence.length>2)
 
 }
 
 export const getPeriodsFromText = (text: string): string[] => {
-    return text.split('\n\n')
+    return text.split(/(\r\n|\n|\r)/gm)
 }
