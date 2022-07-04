@@ -10,6 +10,6 @@ export const PaginatorButton: React.FC<{ pageNumber: number }> = ({pageNumber}) 
         setCurrentPage(pageNumber)
     }
 
-    return <Button onClick={onClick}
+    return <Button className="paginatorButton" onClick={onClick}
                    style={{backgroundColor: pageNumber === currentPage ? 'yellow' : 'white'}}>{pageNumber}</Button>
 }

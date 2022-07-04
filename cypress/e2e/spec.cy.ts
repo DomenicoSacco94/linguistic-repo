@@ -40,18 +40,24 @@ describe('File upload is working', () => {
         interceptTranslationRequest('Die Deutsche Demokratische Republik', 'Translation of the sentence','sentenceTranslation')
         cy.visit(host)
         cy.get('.navLink').contains('Import TXT').click()
-        cy.fixture('test.txt').then(fileContent => {
-            cy.get('input[type="file"]').attachFile({
-                fileContent: fileContent.toString(),
-                fileName: 'testPicture.png',
-                mimeType: 'image/png'
-            });
-        });
+        attachTestFile("test.txt")
         cy.get('.navLink').contains('Read').click()
         cy.get('div').contains('Die Deutsche Demokratische Republik')
         cy.get('div').get('.paragraphButton').eq(0).click()
         cy.wait('@sentenceTranslation')
         cy.get('div').contains('Translation of the sentence')
+    })
+})
+
+describe('Pagination is working', () => {
+    it('passes', () => {
+        cy.visit(host)
+        cy.get('.navLink').contains('Import TXT').click()
+        attachTestFile("longer-test.txt")
+        cy.get('.navLink').contains('Read').click()
+        cy.get('.paginatorButton').contains('1').click()
+        cy.get('div').contains('Some final strings')
+
     })
 })
 
@@ -65,13 +71,7 @@ describe('Uploading a file after the input works correctly', () => {
         cy.get('div').contains('German sentence 2')
 
         cy.get('.navLink').contains('Import TXT').click()
-        cy.fixture('test.txt').then(fileContent => {
-            cy.get('input[type="file"]').attachFile({
-                fileContent: fileContent.toString(),
-                fileName: 'testPicture.png',
-                mimeType: 'image/png'
-            });
-        });
+        attachTestFile("test.txt")
 
 
         cy.get('.navLink').contains('Input').click()
@@ -88,13 +88,7 @@ describe('Input text after uploading a file works correctly', () => {
         cy.visit(host)
 
         cy.get('.navLink').contains('Import TXT').click()
-        cy.fixture('test.txt').then(fileContent => {
-            cy.get('input[type="file"]').attachFile({
-                fileContent: fileContent.toString(),
-                fileName: 'testPicture.png',
-                mimeType: 'image/png'
-            });
-        });
+        attachTestFile("test.txt")
         cy.get('.navLink').contains('Read').click()
         cy.get('div').contains('Die Deutsche Demokratische Republik')
 
@@ -122,4 +116,14 @@ const interceptTranslationRequest = (toTranslate: string, translated: string, de
 
         }
     ).as(description)
+}
+
+const attachTestFile = (fileName: string) => {
+    cy.fixture(fileName).then(fileContent => {
+        cy.get('input[type="file"]').attachFile({
+            fileContent: fileContent.toString(),
+            fileName: fileName,
+            mimeType: 'txt'
+        });
+    });
 }
