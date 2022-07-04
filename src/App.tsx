@@ -15,10 +15,11 @@ export const App = () => {
         <Navigation/>
 
         <Routes>
-            <Route path="/" element={<TextEditor/>}/>
-            <Route path="/import" element={<ImportFile/>}/>
-            <Route path="/editor" element={<TextEditor/>}/>
-            <Route path="/read" element={<ReadingGui/>}/>
+            <Route path="/*">
+                <Route index element={<TextEditor/>}/>
+                <Route path="import" element={<ImportFile/>}/>
+                <Route path="read" element={<ReadingGui/>}/>
+            </Route>
         </Routes>
     </>
 
