@@ -1,5 +1,10 @@
-export const splitFormat = (string: string, separator: string | RegExp): string[] => {
-  return string.length ? string.split(separator).filter((string) => string !== separator) : [''];
+export const splitFormat = (
+  string: string,
+  separator: string | RegExp
+): string[] => {
+  return string.length
+    ? string.split(separator).filter((string) => string !== separator)
+    : [''];
 };
 
 export const getSentencesFromPeriod = (period: string): string[] => {

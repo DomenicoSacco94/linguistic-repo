@@ -9,7 +9,8 @@ export const SentenceButton: React.FC<{
 }> = ({ sentence }) => {
   const words: string[] = splitFormat(sentence, ' ');
 
-  const { translatedSentence, showTranslation, setShowTranslation } = useTranslation(sentence);
+  const { translatedSentence, showTranslation, setShowTranslation } =
+    useTranslation(sentence);
 
   const onClick = async () => {
     setShowTranslation(!showTranslation);

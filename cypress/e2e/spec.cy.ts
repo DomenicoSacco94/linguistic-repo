@@ -21,10 +21,17 @@ describe('Input is working', () => {
     cy.get('div').get('button').contains('sentence').should('not.be.disabled');
     cy.get('div').get('button').contains('sentence').click();
     cy.wait('@wordTranslation');
-    cy.get('div').get('button').contains('sentence:EN').should('not.be.disabled');
+    cy.get('div')
+      .get('button')
+      .contains('sentence:EN')
+      .should('not.be.disabled');
     cy.get('div').get('button').contains('sentence:EN').click();
     cy.get('div').get('button').contains('sentence').should('not.be.disabled');
-    interceptTranslationRequest('German sentence 1', 'English sentence 1', 'sentenceTranslation');
+    interceptTranslationRequest(
+      'German sentence 1',
+      'English sentence 1',
+      'sentenceTranslation'
+    );
     cy.get('div').get('.paragraphButton').eq(0).click();
     cy.wait('@sentenceTranslation');
     cy.get('div').contains('English').click();
@@ -115,7 +122,7 @@ const interceptTranslationRequest = (
 ) => {
   cy.intercept('https://translate.googleapis.com/**', {
     statusCode: 201,
-    body: [[[translated, toTranslate, null, null, 1]]]
+    body: [[[translated, toTranslate, null, null, 1]]],
   }).as(description);
 };
 
@@ -124,7 +131,7 @@ const attachTestFile = (fileName: string) => {
     cy.get('input[type="file"]').attachFile({
       fileContent: fileContent.toString(),
       fileName: fileName,
-      mimeType: 'txt'
+      mimeType: 'txt',
     });
   });
 };

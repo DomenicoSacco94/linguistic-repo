@@ -19,7 +19,10 @@ export const ReadingGui: React.FC = () => {
   return (
     <div className="readingGuiContainer">
       <ReadingDisplay periods={periods} />
-      <Paginator periodsLength={periods.length} textLength={textToRetrieve.length} />
+      <Paginator
+        periodsLength={periods.length}
+        textLength={textToRetrieve.length}
+      />
     </div>
   );
 };

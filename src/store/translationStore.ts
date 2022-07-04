@@ -11,5 +11,5 @@ export const useStore = create<AppState>((set) => ({
   toTranslate: null,
   currentPage: 0,
   setTotranslate: (toTranslate: string | null) => set({ toTranslate }),
-  setCurrentPage: (currentPage: number) => set({ currentPage })
+  setCurrentPage: (currentPage: number) => set({ currentPage }),
 }));

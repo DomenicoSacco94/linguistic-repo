@@ -10,7 +10,7 @@ const props: UploadProps = {
   accept: '.txt',
   beforeUpload,
   headers: {
-    authorization: 'authorization-text'
+    authorization: 'authorization-text',
   },
   onChange(info: UploadChangeParam) {
     if (info.file.status === 'done') {
@@ -18,7 +18,7 @@ const props: UploadProps = {
     } else if (info.file.status === 'error') {
       message.error(`${info.file.name} file upload failed.`);
     }
-  }
+  },
 };
 
 export const ImportFile: React.FC = () => {
