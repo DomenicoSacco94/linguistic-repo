@@ -6,8 +6,7 @@ import {Navigation} from "./components/Navigation";
 import {ReadingGui} from "./components/readingGui/ReadingGui";
 import {ImportFile} from "./components/ImportFile";
 
-//TODO DEPLOY
-//TODO CHECK RESPONSIVE LAYOUT
+//TODO INCLUDE PAGINATED TEXTS
 //TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
 //TODO CUSTOMIZE NUMBER ITEMS PER PAGE THOUGH LIST
 
