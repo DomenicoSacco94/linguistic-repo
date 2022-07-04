@@ -15,7 +15,7 @@ export const App = () => {
         <Navigation/>
 
         <Routes>
-            <Route path="/*">
+            <Route path="linguistic-repo/*">
                 <Route index element={<TextEditor/>}/>
                 <Route path="import" element={<ImportFile/>}/>
                 <Route path="read" element={<ReadingGui/>}/>
