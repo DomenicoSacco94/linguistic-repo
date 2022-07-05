@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/linguistic-repo/static/css/main.7aee34cb.css",
-    "main.js": "/linguistic-repo/static/js/main.2a1dc52a.js",
+    "main.js": "/linguistic-repo/static/js/main.4856bd45.js",
     "static/js/787.3f25289d.chunk.js": "/linguistic-repo/static/js/787.3f25289d.chunk.js",
     "index.html": "/linguistic-repo/index.html",
     "main.7aee34cb.css.map": "/linguistic-repo/static/css/main.7aee34cb.css.map",
-    "main.2a1dc52a.js.map": "/linguistic-repo/static/js/main.2a1dc52a.js.map",
+    "main.4856bd45.js.map": "/linguistic-repo/static/js/main.4856bd45.js.map",
     "787.3f25289d.chunk.js.map": "/linguistic-repo/static/js/787.3f25289d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7aee34cb.css",
-    "static/js/main.2a1dc52a.js"
+    "static/js/main.4856bd45.js"
   ]
 }
