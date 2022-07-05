@@ -20,5 +20,5 @@ export const getSentencesFromPeriod = (period: string): string[] => {
 };
 
 export const getPeriodsFromText = (text: string): string[] => {
-  return text.split(/(\r\n|\n|\r)/gm);
+  return text.split(/\.(\r\n|\n|\r)/gm);
 };
