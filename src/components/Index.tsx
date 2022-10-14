@@ -4,6 +4,7 @@ import { ReadingGui } from './readingGui/ReadingGui';
 import { BooksList } from './books/BooksList';
 import { IndexItem } from '../types/IndexItem';
 import { TextEditor } from './TextEditor';
+import { ClearCacheButton } from './ClearCacheButton';
 
 export const SiteRoutes: IndexItem[] = [
   {
@@ -26,5 +27,10 @@ export const SiteRoutes: IndexItem[] = [
     title: 'Books',
     path: 'books',
     component: <BooksList />,
+  },
+  {
+    title: 'Cache',
+    path: 'cache',
+    component: <ClearCacheButton />,
   },
 ];

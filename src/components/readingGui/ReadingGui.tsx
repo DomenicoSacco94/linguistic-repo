@@ -8,6 +8,7 @@ import { SAVED_TEXT_KEY } from '../../utils/constants';
 import { ReadingDisplay } from './ReadingDisplay';
 import { Paginator } from '../pagination/Paginator';
 import { saveTranslations } from '../../utils/translation';
+import { notification } from 'antd';
 
 export const ReadingGui: React.FC = () => {
   const text = useStore((state) => state.toTranslate);
@@ -24,7 +25,14 @@ export const ReadingGui: React.FC = () => {
       (periods as string[]).forEach((period) => {
         toMap = toMap.concat(getSentencesFromPeriod(period));
       });
-      saveTranslations(toMap).catch(console.error);
+      saveTranslations(toMap)
+        .then(() => {
+          notification.destroy();
+          notification.open({
+            message: 'Translations cached!',
+          });
+        })
+        .catch(console.error);
     }
   }, [textToRetrieve, setCurrentPage]);
 
