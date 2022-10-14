@@ -40,6 +40,13 @@ export const TextEditor: React.FC = () => {
       >
         Upload and Read&Translate
       </Button>
+      <Button
+        disabled={!toTranslate?.length}
+        className="inputTextAreaButton"
+        onClick={() => setToTranslate(null)}
+      >
+        Clear
+      </Button>
     </>
   );
 };
