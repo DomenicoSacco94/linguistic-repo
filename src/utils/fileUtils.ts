@@ -1,5 +1,5 @@
 import { RcFile } from 'antd/lib/upload';
-import { SAVED_TEXT_KEY } from './constants';
+import { READ_TRANSLATE_PATH, SAVED_TEXT_KEY } from './constants';
 import { Book } from '../models/Book';
 import { Buffer } from 'buffer';
 import { NavigateFunction } from 'react-router-dom';
@@ -11,7 +11,7 @@ export const doBeforeUpload =
     reader.onload = (e) => {
       if (e.target?.result) {
         localStorage.setItem(SAVED_TEXT_KEY, e.target?.result.toString());
-        navigate('/linguistic-repo/read');
+        navigate(`${READ_TRANSLATE_PATH}`);
       }
     };
     reader.readAsText(file);

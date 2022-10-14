@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SiteRoutes } from './Index';
 import { IndexItem } from '../types/IndexItem';
+import { ROOT_PATH } from '../utils/constants';
 
 export const Navigation = () => {
   return (
@@ -12,7 +13,7 @@ export const Navigation = () => {
             <Link
               key={route.title}
               className="navLink"
-              to={`linguistic-repo/${route.path}`}
+              to={`${ROOT_PATH + '/' + route.path}`}
             >
               {route.title}
             </Link>

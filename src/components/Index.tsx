@@ -1,5 +1,4 @@
 import React from 'react';
-import { AdminArea } from './AdminArea';
 import { ImportFile } from './ImportFile';
 import { ReadingGui } from './readingGui/ReadingGui';
 import { BooksList } from './books/BooksList';
@@ -27,10 +26,5 @@ export const SiteRoutes: IndexItem[] = [
     title: 'Books',
     path: 'books',
     component: <BooksList />,
-  },
-  {
-    title: 'Admin',
-    path: 'admin',
-    component: <AdminArea />,
   },
 ];

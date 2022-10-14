@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
 import { SiteRoutes } from './components/Index';
 import { IndexItem } from './types/IndexItem';
+import { ROOT_PATH } from './utils/constants';
 
 //TODO RETRIEVE MORE THAN 1 SENTENCE AND SAVE THEM IN LOCALSTORAGE
 //TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
@@ -14,7 +15,7 @@ export const App = () => {
     <>
       <Navigation />
       <Routes>
-        <Route path="linguistic-repo/*">
+        <Route path={`${ROOT_PATH}*`}>
           {SiteRoutes.map((route: IndexItem) => (
             <Route
               key={route.title}

@@ -1,7 +1,11 @@
 import React, { ChangeEventHandler } from 'react';
 import TextArea from 'antd/es/input/TextArea';
 import { useStore } from '../store/translationStore';
-import { DEFAULT_TEXT, SAVED_TEXT_KEY } from '../utils/constants';
+import {
+  DEFAULT_TEXT,
+  READ_TRANSLATE_PATH,
+  SAVED_TEXT_KEY,
+} from '../utils/constants';
 import { Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
@@ -31,9 +35,9 @@ export const TextEditor: React.FC = () => {
       </div>
       <Button
         className="inputTextAreaButton"
-        onClick={() => navigate('/linguistic-repo/read')}
+        onClick={() => navigate(`${READ_TRANSLATE_PATH}`)}
       >
-        Read&Translate
+        Upload and Read&Translate
       </Button>
     </>
   );

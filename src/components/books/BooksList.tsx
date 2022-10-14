@@ -5,6 +5,7 @@ import { Button, Spin, Table } from 'antd';
 import { useStore } from '../../store/translationStore';
 import { useNavigate } from 'react-router-dom';
 import { getBookAsText } from '../../utils/fileUtils';
+import { READ_TRANSLATE_PATH } from '../../utils/constants';
 
 export const BooksList: React.FC = () => {
   const [books, setBooks] = useState<Book[]>([]);
@@ -29,7 +30,7 @@ export const BooksList: React.FC = () => {
         alert('It seems that this book is empty, please select another one');
       } else {
         setToTranslate(textContent);
-        navigate('/linguistic-repo/read');
+        navigate(`${READ_TRANSLATE_PATH}`);
       }
     });
   };
