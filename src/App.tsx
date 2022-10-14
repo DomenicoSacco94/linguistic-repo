@@ -1,12 +1,11 @@
 import React from 'react';
 import './App.css';
-import { TextEditor } from './components/TextEditor';
 import { Route, Routes } from 'react-router-dom';
 import { Navigation } from './components/Navigation';
-import { ReadingGui } from './components/readingGui/ReadingGui';
-import { ImportFile } from './components/ImportFile';
-import { BooksList } from './components/books/BooksList';
+import { SiteRoutes } from './components/Index';
+import { IndexItem } from './types/IndexItem';
 
+//TODO RETRIEVE MORE THAN 1 SENTENCE AND SAVE THEM IN LOCALSTORAGE
 //TODO MAKE IT FLEXIBLE TO DIFFERENT LANGUAGES
 //TODO CUSTOMIZE NUMBER ITEMS PER PAGE THOUGH LIST
 
@@ -16,10 +15,13 @@ export const App = () => {
       <Navigation />
       <Routes>
         <Route path="linguistic-repo/*">
-          <Route index element={<TextEditor />} />
-          <Route path="import" element={<ImportFile />} />
-          <Route path="read" element={<ReadingGui />} />
-          <Route path="books" element={<BooksList />} />
+          {SiteRoutes.map((route: IndexItem) => (
+            <Route
+              key={route.title}
+              path={route.path}
+              element={route.component}
+            />
+          ))}
         </Route>
       </Routes>
     </>

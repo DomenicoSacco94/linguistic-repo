@@ -1,21 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { SiteRoutes } from './Index';
+import { IndexItem } from '../types/IndexItem';
 
 export const Navigation = () => {
   return (
     <nav className="navBar">
-      <Link className="navLink" to="linguistic-repo/books">
-        Books
-      </Link>
-      <Link className="navLink" to="linguistic-repo/import">
-        Import TXT
-      </Link>
-      <Link className="navLink" to="linguistic-repo/">
-        Input
-      </Link>
-      <Link className="navLink" to="linguistic-repo/read">
-        Read
-      </Link>
+      {SiteRoutes.map((route: IndexItem) => (
+        <Link
+          key={route.title}
+          className="navLink"
+          to={`linguistic-repo/${route.path}`}
+        >
+          {route.title}
+        </Link>
+      ))}
     </nav>
   );
 };
