@@ -26,3 +26,11 @@ yarn-error.log*
 
 /cypress/downloads
 /cypress/videos
+/.idea/.gitignore
+/.idea/aws.xml
+/.idea/jpa-buddy.xml
+/.idea/linguistic-repo.iml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/vcs.xml
