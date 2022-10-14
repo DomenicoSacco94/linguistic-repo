@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
 import { useStore } from '../../store/translationStore';
-import { getPeriodsFromText } from '../../utils/stringUtils';
+import {
+  getPeriodsFromText,
+  getSentencesFromPeriod,
+} from '../../utils/stringUtils';
 import { SAVED_TEXT_KEY } from '../../utils/constants';
 import { ReadingDisplay } from './ReadingDisplay';
 import { Paginator } from '../pagination/Paginator';
+import { saveTranslations } from '../../utils/translation';
 
 export const ReadingGui: React.FC = () => {
   const text = useStore((state) => state.toTranslate);
@@ -15,6 +19,13 @@ export const ReadingGui: React.FC = () => {
 
   useEffect(() => {
     setCurrentPage(0);
+    if (periods.length) {
+      let toMap: string[] = [];
+      (periods as string[]).forEach((period) => {
+        toMap = toMap.concat(getSentencesFromPeriod(period));
+      });
+      saveTranslations(toMap).catch(console.error);
+    }
   }, [textToRetrieve, setCurrentPage]);
 
   return periods ? (
