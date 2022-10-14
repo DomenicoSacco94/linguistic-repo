@@ -34,6 +34,7 @@ export const TextEditor: React.FC = () => {
         />
       </div>
       <Button
+        disabled={!toTranslate?.length}
         className="inputTextAreaButton"
         onClick={() => navigate(`${READ_TRANSLATE_PATH}`)}
       >
