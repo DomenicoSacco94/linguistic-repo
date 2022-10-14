@@ -2,10 +2,14 @@ import React, { ChangeEventHandler } from 'react';
 import TextArea from 'antd/es/input/TextArea';
 import { useStore } from '../store/translationStore';
 import { DEFAULT_TEXT, SAVED_TEXT_KEY } from '../utils/constants';
+import { Button } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 export const TextEditor: React.FC = () => {
   const setToTranslate = useStore((state) => state.setTotranslate);
   const toTranslate = useStore((state) => state.toTranslate);
+
+  const navigate = useNavigate();
 
   const onChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
     if (localStorage.getItem(SAVED_TEXT_KEY)) {
@@ -15,14 +19,22 @@ export const TextEditor: React.FC = () => {
   };
 
   return (
-    <div className="inputTextAreaContainer">
-      <TextArea
-        rows={6}
-        className="inputTextArea"
-        placeholder={DEFAULT_TEXT}
-        onChange={onChange}
-        value={toTranslate || ''}
-      />
-    </div>
+    <>
+      <div className="inputTextAreaContainer">
+        <TextArea
+          rows={6}
+          className="inputTextArea"
+          placeholder={DEFAULT_TEXT}
+          onChange={onChange}
+          value={toTranslate || ''}
+        />
+      </div>
+      <Button
+        className="inputTextAreaButton"
+        onClick={() => navigate('/linguistic-repo/read')}
+      >
+        Read&Translate
+      </Button>
+    </>
   );
 };

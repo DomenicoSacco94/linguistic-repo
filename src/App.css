@@ -26,6 +26,12 @@
   text-align: center;
 }
 
+.inputTextAreaButton {
+  margin: 5px 0 0 20px;
+  align-content: center;
+  text-align: center;
+}
+
 .readingGuiContainer {
   margin: 20px;
   align-content: center;

@@ -6,15 +6,18 @@ import { IndexItem } from '../types/IndexItem';
 export const Navigation = () => {
   return (
     <nav className="navBar">
-      {SiteRoutes.map((route: IndexItem) => (
-        <Link
-          key={route.title}
-          className="navLink"
-          to={`linguistic-repo/${route.path}`}
-        >
-          {route.title}
-        </Link>
-      ))}
+      {SiteRoutes.map(
+        (route: IndexItem) =>
+          !route.hide && (
+            <Link
+              key={route.title}
+              className="navLink"
+              to={`linguistic-repo/${route.path}`}
+            >
+              {route.title}
+            </Link>
+          )
+      )}
     </nav>
   );
 };

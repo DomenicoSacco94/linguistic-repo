@@ -21,6 +21,7 @@ export const SiteRoutes: IndexItem[] = [
     title: 'Read',
     path: 'read',
     component: <ReadingGui />,
+    hide: true,
   },
   {
     title: 'Books',
