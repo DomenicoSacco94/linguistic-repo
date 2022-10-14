@@ -8,13 +8,16 @@ export const doBeforeUpload =
   (navigate: NavigateFunction) => (file: RcFile) => {
     const reader = new FileReader();
 
-    reader.onload = (e) => {
-      if (e.target?.result) {
-        localStorage.setItem(SAVED_TEXT_KEY, e.target?.result.toString());
-        navigate(`${READ_TRANSLATE_PATH}`);
-      }
-    };
-    reader.readAsText(file);
+    console.log(file.type);
+    if (file.type == 'text/plain') {
+      reader.onload = (e) => {
+        if (e.target?.result) {
+          localStorage.setItem(SAVED_TEXT_KEY, e.target?.result.toString());
+          navigate(`${READ_TRANSLATE_PATH}`);
+        }
+      };
+      reader.readAsText(file);
+    }
     // Prevent upload
     return false;
   };

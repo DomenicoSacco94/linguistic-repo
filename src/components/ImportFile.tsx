@@ -13,7 +13,7 @@ export const ImportFile: React.FC = () => {
 
   const props: UploadProps = {
     name: 'file',
-    accept: '.txt',
+    accept: 'text/plain',
     beforeUpload: doBeforeUpload(navigate),
     headers: {
       authorization: 'authorization-text',
