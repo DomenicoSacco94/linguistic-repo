@@ -12,7 +12,7 @@ export const SiteRoutes: IndexItem[] = [
     component: <TextEditor />,
   },
   {
-    title: 'Import',
+    title: 'Import text file',
     path: 'import',
     component: <ImportFile />,
   },
@@ -23,7 +23,7 @@ export const SiteRoutes: IndexItem[] = [
     hide: true,
   },
   {
-    title: 'Cache',
+    title: 'Cached translations',
     path: 'cache',
     component: <ClearCacheButton />,
   },

@@ -25,6 +25,7 @@ export const ClearCacheButton: React.FC = () => {
           `Uploaded file size: ${memorySizeOf(cachedText)}`}
       </div>
       <Button
+        disabled={!cachedTranslationsMap?.size}
         className="inputTextAreaButton"
         onClick={() => {
           localStorage.removeItem(SAVED_TRANSLATIONS_KEY);
@@ -35,6 +36,7 @@ export const ClearCacheButton: React.FC = () => {
       </Button>
       <Button
         className="inputTextAreaButton"
+        disabled={!cachedText?.length}
         onClick={() => {
           localStorage.removeItem(SAVED_TEXT_KEY);
           setCachedText('');
