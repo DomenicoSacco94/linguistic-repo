@@ -70,6 +70,5 @@
     "gh-pages": "^4.0.0",
     "prettier": "^2.7.1"
   },
-  "homepage": "https://DomenicoSacco94.github.io/linguistic-repo/input",
-  "proxy": "https://stark-crag-00671.herokuapp.com"
+  "homepage": "https://DomenicoSacco94.github.io/linguistic-repo"
 }
