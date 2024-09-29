@@ -7,7 +7,7 @@ import {
 import { SAVED_TEXT_KEY } from '../../utils/constants';
 import { ReadingDisplay } from './ReadingDisplay';
 import { Paginator } from '../pagination/Paginator';
-import { saveTranslations } from '../../utils/translation';
+import { createTranslationMap } from '../../utils/translation';
 import { notification } from 'antd';
 
 export const ReadingGui: React.FC = () => {
@@ -15,8 +15,7 @@ export const ReadingGui: React.FC = () => {
   const setCurrentPage = useStore((state) => state.setCurrentPage);
   const localstorageFile = localStorage.getItem(SAVED_TEXT_KEY);
   const textToRetrieve = text ? text : localstorageFile!;
-  const periods: '' | string[] =
-    textToRetrieve && getPeriodsFromText(textToRetrieve);
+  const periods: string[] = getPeriodsFromText(textToRetrieve);
 
   useEffect(() => {
     setCurrentPage(0);
@@ -25,7 +24,7 @@ export const ReadingGui: React.FC = () => {
       (periods as string[]).forEach((period) => {
         toMap = toMap.concat(getSentencesFromPeriod(period));
       });
-      saveTranslations(toMap)
+      createTranslationMap(toMap)
         .then(() => {
           notification.destroy();
           notification.open({
@@ -34,17 +33,18 @@ export const ReadingGui: React.FC = () => {
         })
         .catch(console.error);
     }
-  }, [textToRetrieve, setCurrentPage]);
+  }, [textToRetrieve]);
 
-  return periods ? (
-    <div className="readingGuiContainer">
-      <ReadingDisplay periods={periods!} />
+  return (
+    <div
+      className="readingGuiContainer"
+      placeholder="Please upload something to start reading"
+    >
+      <ReadingDisplay periods={periods} />
       <Paginator
         periodsLength={periods!.length}
         textLength={textToRetrieve.length}
       />
     </div>
-  ) : (
-    <div> Please upload something to start reading </div>
   );
 };

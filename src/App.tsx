@@ -15,7 +15,7 @@ export const App = () => {
     <>
       <Navigation />
       <Routes>
-        <Route path={`${ROOT_PATH}*`}>
+        <Route path={`${ROOT_PATH}`}>
           {SiteRoutes.map((route: IndexItem) => (
             <Route
               key={route.title}

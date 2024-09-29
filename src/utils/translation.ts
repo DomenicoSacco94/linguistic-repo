@@ -18,12 +18,6 @@ export const getMapFromCache = (): Map<string, string> =>
     JSON.parse(localStorage.getItem(SAVED_TRANSLATIONS_KEY)!)
   );
 
-const saveMapToCache = (cachedTranslationsMap: Map<string, string>) =>
-  localStorage.setItem(
-    SAVED_TRANSLATIONS_KEY,
-    JSON.stringify(Array.from(cachedTranslationsMap.entries()))
-  );
-
 export const createTranslationMap = async (sentences: string[]) => {
   const cachedTranslationsMap = localStorage.getItem(SAVED_TRANSLATIONS_KEY)
     ? getMapFromCache()
@@ -32,25 +26,15 @@ export const createTranslationMap = async (sentences: string[]) => {
   for (const sentence of sentences) {
     if (!cachedTranslationsMap.get(sentence)) {
       const translation = await translateString(sentence);
-      setTimeout(() => cachedTranslationsMap.set(sentence, translation), 100);
+      setTimeout(() => cachedTranslationsMap.set(sentence, translation), 200);
     }
   }
-  saveIntoMap(cachedTranslationsMap);
+  saveMapToCache(cachedTranslationsMap);
 };
 
-const saveIntoMap = (cachedTranslationsMap: Map<string, string>) => {
-  if (!localStorage.getItem(SAVED_TRANSLATIONS_KEY)) {
-    saveMapToCache(cachedTranslationsMap);
-  } else {
-    const cachedTranslationsMap = getMapFromCache();
-    cachedTranslationsMap.forEach((k, v) => {
-      if (!cachedTranslationsMap.get(k)) {
-        cachedTranslationsMap.set(k, v);
-      }
-    });
-    saveMapToCache(cachedTranslationsMap);
-  }
+const saveMapToCache = (cachedTranslationsMap: Map<string, string>) => {
+  localStorage.setItem(
+    SAVED_TRANSLATIONS_KEY,
+    JSON.stringify(Array.from(cachedTranslationsMap.entries()))
+  );
 };
-
-export const saveTranslations = async (sentencesToSave: string[]) =>
-  await createTranslationMap(sentencesToSave);
