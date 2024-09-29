@@ -8,7 +8,7 @@ import { ClearCacheButton } from './ClearCacheButton';
 export const SiteRoutes: IndexItem[] = [
   {
     title: 'Input text',
-    path: '',
+    path: 'input',
     component: <TextEditor />,
   },
   {

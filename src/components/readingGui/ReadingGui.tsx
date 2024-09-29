@@ -36,10 +36,7 @@ export const ReadingGui: React.FC = () => {
   }, [textToRetrieve]);
 
   return (
-    <div
-      className="readingGuiContainer"
-      placeholder="Please upload something to start reading"
-    >
+    <div className="readingGuiContainer">
       <ReadingDisplay periods={periods} />
       <Paginator
         periodsLength={periods!.length}

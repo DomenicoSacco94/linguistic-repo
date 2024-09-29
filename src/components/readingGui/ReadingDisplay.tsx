@@ -1,5 +1,5 @@
 import React from 'react';
-import { PeriodButton } from './wordProcessing/PeriodButton';
+import { PeriodDisplayer } from './wordProcessing/PeriodDisplayer';
 import { ITEMS_PER_PAGE } from '../../utils/constants';
 import { useStore } from '../../store/translationStore';
 
@@ -16,7 +16,7 @@ export const ReadingDisplay: React.FC<{ periods: string[] }> = ({
         .slice(startPage, startPage + ITEMS_PER_PAGE)
         .map((periods, index) =>
           periods.length > 0 ? (
-            <PeriodButton key={index} period={periods} />
+            <PeriodDisplayer key={index} period={periods} />
           ) : (
             showLineBreak(index) && <br key={index} />
           )

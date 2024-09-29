@@ -16,9 +16,7 @@ export const TextEditor: React.FC = () => {
   const navigate = useNavigate();
 
   const onChange: ChangeEventHandler<HTMLTextAreaElement> = (event) => {
-    if (localStorage.getItem(SAVED_TEXT_KEY)) {
-      localStorage.setItem(SAVED_TEXT_KEY, '');
-    }
+    localStorage.removeItem(SAVED_TEXT_KEY);
     setToTranslate(event.target.value);
   };
 

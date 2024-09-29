@@ -1,7 +1,5 @@
 import { RcFile } from 'antd/lib/upload';
 import { READ_TRANSLATE_PATH, SAVED_TEXT_KEY } from './constants';
-import { Book } from '../models/Book';
-import { Buffer } from 'buffer';
 import { NavigateFunction } from 'react-router-dom';
 
 export const doBeforeUpload =
@@ -20,16 +18,6 @@ export const doBeforeUpload =
     // Prevent upload
     return false;
   };
-
-export const getBookAsText = (book: Book): string | undefined => {
-  if (book.content) {
-    return book.content;
-  } else if (book.rawContent) {
-    return new Buffer(book.rawContent, 'base64').toString('utf-8');
-  } else {
-    return undefined;
-  }
-};
 
 export const memorySizeOf = (obj: any) => {
   let bytes = 0;
