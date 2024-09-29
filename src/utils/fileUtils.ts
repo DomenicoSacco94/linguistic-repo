@@ -8,7 +8,6 @@ export const doBeforeUpload =
   (navigate: NavigateFunction) => (file: RcFile) => {
     const reader = new FileReader();
 
-    console.log(file.type);
     if (file.type == 'text/plain') {
       reader.onload = (e) => {
         if (e.target?.result) {

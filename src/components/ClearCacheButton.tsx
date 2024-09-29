@@ -5,19 +5,30 @@ import { getMapFromCache } from '../utils/translation';
 import { memorySizeOf } from '../utils/fileUtils';
 
 export const ClearCacheButton: React.FC = () => {
-  const map = getMapFromCache();
+  const [cachedTranslationsMap, setCachedTranslationsMap] = React.useState<
+    Map<string, string>
+  >(getMapFromCache());
+
+  const [cachedText, setCachedText] = React.useState<string>(
+    localStorage.getItem(SAVED_TEXT_KEY)?.toString() || ''
+  );
 
   return (
     <>
       <div className="inputTextAreaContainer">
-        Cached entries: {map?.size}
+        Cached entries: {cachedTranslationsMap?.size}
         <br />
-        {map?.size > 0 && `Cache size: ${memorySizeOf(map)}`}
+        {cachedTranslationsMap?.size > 0 &&
+          `Cache size: ${memorySizeOf(cachedTranslationsMap)}`}
+        <br />
+        {cachedText?.length > 0 &&
+          `Uploaded file size: ${memorySizeOf(cachedText)}`}
       </div>
       <Button
         className="inputTextAreaButton"
         onClick={() => {
           localStorage.removeItem(SAVED_TRANSLATIONS_KEY);
+          setCachedTranslationsMap(new Map<string, string>());
         }}
       >
         Clear cached translations
@@ -26,9 +37,10 @@ export const ClearCacheButton: React.FC = () => {
         className="inputTextAreaButton"
         onClick={() => {
           localStorage.removeItem(SAVED_TEXT_KEY);
+          setCachedText('');
         }}
       >
-        Clear saved text
+        Clear uploaded file
       </Button>
     </>
   );

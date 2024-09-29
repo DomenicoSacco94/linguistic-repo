@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Button, Upload, UploadProps } from 'antd';
 import { UploadOutlined } from '@ant-design/icons';
 import { useStore } from '../store/translationStore';
@@ -7,7 +7,6 @@ import { doBeforeUpload } from '../utils/fileUtils';
 
 export const ImportFile: React.FC = () => {
   const setToTranslate = useStore((state) => state.setTotranslate);
-  useEffect(() => setToTranslate(null), [setToTranslate]);
 
   const navigate = useNavigate();
 
@@ -23,7 +22,9 @@ export const ImportFile: React.FC = () => {
   return (
     <div className="inputTextAreaContainer">
       <Upload {...props}>
-        <Button icon={<UploadOutlined />}>Click to Read&Translate</Button>
+        <Button onClick={() => setToTranslate(null)} icon={<UploadOutlined />}>
+          Click to Read&Translate
+        </Button>
       </Upload>
     </div>
   );
