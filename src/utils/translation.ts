@@ -26,7 +26,8 @@ export const createTranslationMap = async (sentences: string[]) => {
   for (const sentence of sentences) {
     if (!cachedTranslationsMap.get(sentence)) {
       const translation = await translateString(sentence);
-      setTimeout(() => cachedTranslationsMap.set(sentence, translation), 200);
+      cachedTranslationsMap.set(sentence, translation);
+      await new Promise((resolve) => setTimeout(resolve, 200));
     }
   }
   saveMapToCache(cachedTranslationsMap);
