@@ -1,6 +1,14 @@
 ## German reading excercise app
 
-This is the FE for an app that helps you practice German, you can paste a text and get a translation by clicking a single word or the whole sentence
+This is the FE for an app that can help you practice German. 
+You can paste a text and get a translation for each single word (by clicking on it) or for the whole sentence (by clicking the **>** icon).
+The app allows you to import a text file for doing the same.
+
+The sentence translations are cached on your local browser, so you can read in the Metro in peace, without worrying about the internet connection :D.
+
+FOr longer texts, a pagination mechanism is implemented ;-)
+
+![Preview of the linguistic repo](./screenshots/preview_linguistic_repo.png)
 
 ## Link to the app
 
