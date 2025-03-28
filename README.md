@@ -12,7 +12,7 @@ For longer texts, a pagination mechanism is implemented ;-)
 
 ## Link to the app
 
-You can try the app [here](https://domenicosacco94.github.io/linguistic-repo/input)
+You can try the app [here](https://domenicosacco94.github.io/linguistic-repo). Use **input** to enter the text in German.
 
 
 ## Main tools used
